@@ -17,18 +17,18 @@ public class TextController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		print (myState);
-		if 		(myState == States.room) 		{room ();}
+		if 	(myState == States.room) 	{room ();}
 		else if (myState == States.lollipop_0) 	{lollipop_0 ();}
-		else if (myState == States.lock_0) 		{lock_0 ();}
-		else if (myState == States.axe)			{axe ();}
+		else if (myState == States.lock_0) 	{lock_0 ();}
+		else if (myState == States.axe)		{axe ();}
 		else if (myState == States.lollipop_1)	{lollipop_1 ();}
-		else if (myState == States.lock_1)		{lock_1 ();}
+		else if (myState == States.lock_1)	{lock_1 ();}
 		else if (myState == States.room_axe)	{room_axe ();}
 		else if (myState == States.corridor)	{corridor ();}
 		else if (myState == States.stairs_up)	{stairs_up ();}
 		else if (myState == States.stairs_down)	{stairs_down ();}
-		else if (myState == States.closet)		{closet ();}
-		else if (myState == States.freedom)		{freedom ();}
+		else if (myState == States.closet)	{closet ();}
+		else if (myState == States.freedom)	{freedom ();}
 	}
 
 	void room () {
@@ -37,7 +37,7 @@ public class TextController : MonoBehaviour {
 					"The door's locked.\n\n" +
 					"Press P to view lollipop, A to view axe and L to view lock.";
 
-		if(Input.GetKeyDown(KeyCode.P)) 		{myState = States.lollipop_0;}
+		if(Input.GetKeyDown(KeyCode.P)) 	{myState = States.lollipop_0;}
 		else if(Input.GetKeyDown(KeyCode.A)) 	{myState = States.axe;}
 		else if(Input.GetKeyDown(KeyCode.L))	{myState = States.lock_0;}
 
@@ -48,14 +48,14 @@ public class TextController : MonoBehaviour {
 					"going to escape with a lollipop anyway, right?\n\n" +
 					"Press R to return to looking around in the room.";
 
-		if(Input.GetKeyDown(KeyCode.R)) 		{myState = States.room;}
+		if(Input.GetKeyDown(KeyCode.R)) 	{myState = States.room;}
 	}
 
 	void lock_0 () {
 		text.text = "The door's locked, but the lock has seen better days... \n\n" +
 					"Press R to return to looking around in the room.";
 		
-		if(Input.GetKeyDown(KeyCode.R)) 		{myState = States.room;}
+		if(Input.GetKeyDown(KeyCode.R)) 	{myState = States.room;}
 	}
 
 	void axe () {
@@ -63,7 +63,7 @@ public class TextController : MonoBehaviour {
 					"but maybe it's still worth taking it?\n\n" +
 					"Press T to take the axe, or R to return to looking around in the room.";
 		
-		if(Input.GetKeyDown(KeyCode.T)) 		{myState = States.room_axe;}
+		if(Input.GetKeyDown(KeyCode.T)) 	{myState = States.room_axe;}
 		else if(Input.GetKeyDown(KeyCode.R)) 	{myState = States.room;}
 	}
 
@@ -72,7 +72,7 @@ public class TextController : MonoBehaviour {
 					"to do now?\n\n" +
 					"Press L to view the lock, or P to view lollipop.";
 		
-		if(Input.GetKeyDown(KeyCode.L)) 		{myState = States.lock_1;}
+		if(Input.GetKeyDown(KeyCode.L)) 	{myState = States.lock_1;}
 		else if(Input.GetKeyDown(KeyCode.D)) 	{myState = States.lollipop_1;}
 	}
 
@@ -81,7 +81,7 @@ public class TextController : MonoBehaviour {
 					"or does it ? ( ͡° ͜ʖ ͡°)\n\n" +
 					"Press R to return.";
 		
-		if(Input.GetKeyDown(KeyCode.R)) 		{myState = States.room_axe;}
+		if(Input.GetKeyDown(KeyCode.R)) 	{myState = States.room_axe;}
 	}
 
 	void lock_1 () {
@@ -89,7 +89,7 @@ public class TextController : MonoBehaviour {
 					"maybe I could smash that piece of junk?\n\n" +
 					"Press B to break the lock, or R to return.";
 		
-		if(Input.GetKeyDown(KeyCode.B)) 		{myState = States.corridor;}
+		if(Input.GetKeyDown(KeyCode.B)) 	{myState = States.corridor;}
 		else if(Input.GetKeyDown(KeyCode.R)) 	{myState = States.room_axe;}
 	}
 
@@ -97,9 +97,9 @@ public class TextController : MonoBehaviour {
 		text.text = "You entered a dark corridor with a closet and a stairway.\n\n" +
 					"Press Up to go upstairs, Down to go downstairs, or C to open the closet.";
 		
-		if(Input.GetKeyDown(KeyCode.UpArrow)) 			{myState = States.stairs_up;}
+		if(Input.GetKeyDown(KeyCode.UpArrow)) 		{myState = States.stairs_up;}
 		else if(Input.GetKeyDown(KeyCode.DownArrow)) 	{myState = States.stairs_down;}
-		else if(Input.GetKeyDown(KeyCode.C)) 			{myState = States.closet;}
+		else if(Input.GetKeyDown(KeyCode.C)) 		{myState = States.closet;}
 	}
 
 	void stairs_up () {
@@ -107,7 +107,7 @@ public class TextController : MonoBehaviour {
 					"out and locked you in the same room you just escaped from!\n\n" +
 					"Press Enter to suck it up, and start over.";
 		
-		if(Input.GetKeyDown(KeyCode.Return)) 			{myState = States.room;}
+		if(Input.GetKeyDown(KeyCode.Return)) 	{myState = States.room;}
 	}
 
 	void stairs_down () {
@@ -115,7 +115,7 @@ public class TextController : MonoBehaviour {
 					"and blacked out. Sometime later you woke up in the room you escaped from! \n\n" +
 					"Press Enter to suck it up, and start over.";
 		
-		if(Input.GetKeyDown(KeyCode.Return)) 			{myState = States.room;}
+		if(Input.GetKeyDown(KeyCode.Return)) 	{myState = States.room;}
 	}
 
 	void closet () {
@@ -123,8 +123,8 @@ public class TextController : MonoBehaviour {
 					"this, a portal from DOOM!? Could this be the way out?\n\n" +
 					"Press P to enter the portal, or R to return";
 		
-		if(Input.GetKeyDown(KeyCode.P)) 			{myState = States.freedom;}
-		else if(Input.GetKeyDown(KeyCode.R)) 		{myState = States.corridor;}
+		if(Input.GetKeyDown(KeyCode.P)) 	{myState = States.freedom;}
+		else if(Input.GetKeyDown(KeyCode.R)) 	{myState = States.corridor;}
 	}
 
 	void freedom () {
